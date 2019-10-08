@@ -47,13 +47,13 @@ $clue = preg_replace("/[$available]/", "_", $word);
   </head>
   
   <body>
-    <h1>Hangman</h1>
     
     <div>
-      <!--img src="https://webster.cs.washington.edu/cse154/labs/hangman<?= $guesses ?>.gif" alt="hangman" /--> 
+      <img src="https://miro.medium.com/max/318/1*TzbmJ5RWXeyjnT1ZuG664A.png" alt="hangman" /> 
+	  <br/>
       (<?= $guesses ?> guesses remaining)
     </div>
-    
+    <br/>
     <div id="clue"> <?= $clue ?> </div>
     
 		<!--form action="hangman-solution.php">
