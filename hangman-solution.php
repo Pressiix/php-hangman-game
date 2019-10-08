@@ -108,9 +108,5 @@ $clue = preg_replace("/[$available]/", "_", $word);
     	HINT: The word is: <code>"<?= $word ?>"</code> <br />
     	The letters available are: <code>"<?= $available ?>"</code>
     </div>
-	
-	<script>
-		$("#div1").load("words.txt");
-	</script>
   </body>
 </html>

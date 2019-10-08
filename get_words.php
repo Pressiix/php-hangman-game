@@ -17,7 +17,6 @@
         {
             $mysqli = Words::dbConnect();
            
-           /* Select queries return a resultset */
            if ($result = $mysqli->query("SELECT `word` FROM `words`")) {
                while ($row = $result->fetch_assoc()){
                    $words[] = $row['word'];
