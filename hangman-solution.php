@@ -60,7 +60,7 @@ $clue = preg_replace("/[$available]/", "_", $word);
 			<input name="guess" type="text" size="1" maxlength="1" autofocus="autofocus" >
 			
 			<input type="submit" value="Guess" >
-		<!--/form -->
+		</form -->
 		<br/>
 		<form action="hangman-solution.php" method="post">
 			<input name="newgame" type="hidden" value="true">
