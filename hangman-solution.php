@@ -72,7 +72,7 @@ $clue = preg_replace("/[$available]/", "_", $word);
 		<table>
 			<tr>
       <?php
-	  $row = 0;
+	  $column = 0;
       $LETTERS = "abcdefghijklmnopqrstuvwxyz";
       for ($i = 0; $i < strlen($LETTERS); $i++) {
 				?>
@@ -84,11 +84,11 @@ $clue = preg_replace("/[$available]/", "_", $word);
 							</td>
 				</form>
 				<?php
-				$row++;
-				if($row == 13)
+				$column++;
+				if($column == 13)
 				{
 					echo "</tr>";
-					$row = 0;
+					$column = 0;
 				}
 			}
 			?>
