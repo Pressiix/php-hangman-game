@@ -41,47 +41,50 @@ $clue = preg_replace("/[$available]/", "_", $word);
 
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Hangman</title>
+
+<head>
+	<title>Hangman</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  </head>
-  
-  <body>
-    
-    <div>
-      <img src="https://miro.medium.com/max/318/1*TzbmJ5RWXeyjnT1ZuG664A.png" alt="hangman" /> 
-	  <br/>
-      (<?= $guesses ?> guesses remaining)
-    </div>
-    <br/>
-    <div id="clue"> <?= $clue ?> </div>
-    
-		<!--form action="hangman-solution.php">
+</head>
+
+<body>
+
+	<div>
+		<img src="https://miro.medium.com/max/318/1*TzbmJ5RWXeyjnT1ZuG664A.png" alt="hangman" />
+		<br />
+		(<?= $guesses ?> guesses remaining)
+	</div>
+	<br />
+	<div id="clue"> <?= $clue ?> </div>
+
+	<!--form action="hangman-solution.php">
 			<input name="guess" type="text" size="1" maxlength="1" autofocus="autofocus" >
 			
 			<input type="submit" value="Guess" >
 		</form -->
-		<br/>
-		<form action="hangman-solution.php" method="post">
-			<input name="newgame" type="hidden" value="true">
-			<input type="submit" value="New Game">
-		</form>
-	<br/>
-		<!-- advanced feature: guessing letter buttons -->
-    <div id="letters">
+	<br />
+	<form action="hangman-solution.php" method="post">
+		<input name="newgame" type="hidden" value="true">
+		<input type="submit" value="New Game">
+	</form>
+	<br />
+	<!-- advanced feature: guessing letter buttons -->
+	<div id="letters">
 		<table>
 			<tr>
-      <?php
+				<?php
 	  $column = 0;
       $LETTERS = "abcdefghijklmnopqrstuvwxyz";
       for ($i = 0; $i < strlen($LETTERS); $i++) {
 				?>
 				<form action="hangman-solution.php">
-					
-							<td>
-								<input name="guess" type="hidden" value="<?= $LETTERS[$i] ?>" />
-								<input type="submit" value="<?= $LETTERS[$i] ?>" <?= (preg_match("/{$LETTERS[$i]}/", $available) && $guesses > 0 && $clue != $word) ? "" : "disabled=\"disabled\"" ?> style="width:40px;">
-							</td>
+
+					<td>
+						<input name="guess" type="hidden" value="<?= $LETTERS[$i] ?>" />
+						<input type="submit" value="<?= $LETTERS[$i] ?>"
+							<?= (preg_match("/{$LETTERS[$i]}/", $available) && $guesses > 0 && $clue != $word) ? "" : "disabled=\"disabled\"" ?>
+							style="width:40px;">
+					</td>
 				</form>
 				<?php
 				$column++;
@@ -92,21 +95,26 @@ $clue = preg_replace("/[$available]/", "_", $word);
 				}
 			}
 			?>
-				
-			</table>
-    </div>
-			
-    <?php if ($clue == $word && $guesses > 0) { ?>
-		<script>alert(' Congratulations!  You win! ')</script>
-    <?php } ?>
 
-    <?php if ($guesses == 0) { ?>
-		<script>alert(' Game over! You lost! ')</script>
-    <?php } ?>
-		<br/>
-    <div id="hint">
-    	HINT: The word is: <b><code>"<?= $word ?>"</code></b> <br />
-    	The letters available are: <code>"<?= $available ?>"</code>
-    </div>
-  </body>
+		</table>
+	</div>
+
+	<?php if ($clue == $word && $guesses > 0) { ?>
+	<script>
+		alert(' Congratulations!  You win! ')
+	</script>
+	<?php } ?>
+
+	<?php if ($guesses == 0) { ?>
+	<script>
+		alert(' Game over! You lost! ')
+	</script>
+	<?php } ?>
+	<br />
+	<div id="hint">
+		HINT: The word is: <b><code>"<?= $word ?>"</code></b> <br />
+		The letters available are: <code>"<?= $available ?>"</code>
+	</div>
+</body>
+
 </html>
