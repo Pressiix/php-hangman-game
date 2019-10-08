@@ -468,7 +468,7 @@ INSERT INTO `words` (`id`, `word`) VALUES
 (428, 'volubility'),
 (429, 'waft'),
 (430, 'welter'),
-(431, 'wri,t\"NULL');
+(431, 'writ');
 
 --
 -- Indexes for dumped tables
