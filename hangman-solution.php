@@ -105,7 +105,7 @@ $clue = preg_replace("/[$available]/", "_", $word);
     <?php } ?>
 		<br/>
     <div id="hint">
-    	HINT: The word is: <code>"<?= $word ?>"</code> <br />
+    	HINT: The word is: <b><code>"<?= $word ?>"</code></b> <br />
     	The letters available are: <code>"<?= $available ?>"</code>
     </div>
   </body>
