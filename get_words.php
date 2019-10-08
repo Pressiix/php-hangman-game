@@ -22,7 +22,6 @@
                while ($row = $result->fetch_assoc()){
                    $words[] = $row['word'];
                }
-               /* free result set */
                $result->close();
            }
             mysqli_close($mysqli);
