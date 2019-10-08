@@ -85,7 +85,7 @@ $clue = preg_replace("/[$available]/", "_", $word);
 				</form>
 				<?php
 				$row++;
-				if($row == 7)
+				if($row == 13)
 				{
 					echo "</tr>";
 					$row = 0;
