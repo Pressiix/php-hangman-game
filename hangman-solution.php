@@ -14,7 +14,7 @@ if (isset($_COOKIE["HANGMAN_word"]) && !isset($_POST["newgame"])) {
 } else {
 	//$words = file("words.txt", FILE_IGNORE_NEW_LINES);   # get word array from source file //or SQL Query
 	$words = Words::getWords();  # get word array from SQL Query
-	echo "<pre/>"; print_r($words); echo "<pre/>";
+	//echo "<pre/>"; print_r($words); echo "<pre/>";
 	$word  = $words[rand(0, count($words))];	//random some word from array
 	
 	setcookie("HANGMAN_word", $word);
