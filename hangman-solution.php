@@ -37,7 +37,7 @@ if (isset($_GET["guess"]) && $guesses > 0) {   # user wants to guess a letter
 }
 
 # produce current clue string based on available letters
-$clue = preg_replace("/[$available]/", "_", $word);
+$clue = preg_replace("/[$available]/", "_ ", $word);
 ?>
 
 <!DOCTYPE html>
